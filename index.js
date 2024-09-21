@@ -56,6 +56,7 @@ app.get('/logout', userCont.logout)
 app.post('/register', validateUser, userCont.postRegistration)
 app.post('/login', userCont.postLogin)
 
-app.listen(5000, () => {
-    console.log('server is listening on port 5000')
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });
