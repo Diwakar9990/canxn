@@ -1,0 +1,29 @@
+<div class="container text-start">
+    <h3 class="text-light p-1 justify-content-start"><b>Welcome to</b></h3>
+    <div class="row d-flex justify-content-start">
+        <div class="col-lg-5 mt-3 ms-3 py-2 border border-end-0 border-light bg-black">
+            <img src="images/canxn-high-resolution-logo-transparent.png" height="140" width="400">
+        </div>
+        <div
+            class="col-lg-4 mt-3 py-2 border border-start-0 border-light bg-black d-flex justify-content-start align-items-center">
+            <a href="/index"><button class=" btn btn-outline-primary mx-2">I'm a Job Seeker</button></a>
+            <a href="/login"><button class="btn btn-outline-primary mx-2">I'm a Recruter</button></a>
+        </div>
+    </div>
+    <h3 id="Tagline" class="fw-bold text-light mt-2 pt-3 h-20 w-100"></h3>
+</div>
+
+
+<script>
+    var i = 0;
+    var txt = 'An Initiative to connect with connections   ';
+    const textElement = document.querySelector('#Tagline');
+    setInterval(() => {
+        textElement.textContent += txt[i];
+        i++;
+        if (i >= txt.length) {
+            textElement.textContent = '';
+            i = 0;
+        }
+    }, 200);
+</script>

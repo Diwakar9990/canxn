@@ -1,0 +1,27 @@
+<%if(errorMessage){ %>
+    <div class="alert alert-danger" role="alert">
+        <%= errorMessage %>
+    </div>
+    <%}%>
+        <form action="/register" method="post" class="border border-light bg-black text-light rounded ms-2 p-3">
+            <div class="d-flex flex-column row text-light">
+                <h2>Registration Form</h2>
+                <div class="col-lg-4 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" aria-describedby="Name">
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary mx-2">Register</button>
+            <span class="text-light">or</span>
+            <b class="mx-2 mt-1 text-light"><b>Already have an account</b><a class="text-decoration-none text-primary"
+                    href="/login"><b> login here</b></a>
+        </form>

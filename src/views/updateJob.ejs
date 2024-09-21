@@ -1,0 +1,73 @@
+<%if(errorMessage){ %>
+    <div class="alert alert-danger" role="alert">
+        <%= errorMessage %>
+    </div>
+    <%}%>
+
+        <form action="/updateJob" method="post" class="border border-light bg-black text-light rounded ms-2 p-3">
+            <h2>Edit the Details Below</h2>
+            <div class="d-flex row">
+                <div class="col-sm-10 col-lg-4 gy-2 gx-3 align-items-center form-floating mb-3">
+                    <input type="hidden" class="form-control" id="id" name="id" value="<%= job.id %>">
+                    <input type="hidden" class="form-control" id="applicants" name="applicants" value="0">
+                    <input type="text" class="form-control" id="title" name="title" value="<%= job.title %>">
+                    <label for="title">Job Title</label>
+                </div>
+                <div class="col-sm-10 col-lg-4 gy-2 gx-3 align-items-center form-floating mb-3">
+                    <input type="text" class="form-control" id="company" name="company" value="<%= job.company %>">
+                    <label for="company">Company Name</label>
+                </div>
+            </div>
+
+            <div class="d-flex row">
+                <div class="col-sm-10 col-lg-4 gy-2 gx-3 align-items-center form-floating mb-3">
+                    <input type="text" class="form-control" id="location" name="location" value="<%= job.location %>">
+                    <label for="location">Location</label>
+                </div>
+                <div class="col-sm-10 col-lg-4 gy-2 gx-3 align-items-center form-floating mb-3">
+                    <input type="text" class="form-control" id="salary" name="salary" value="<%= job.salary %>">
+                    <label for="salary">Salary</label>
+                </div>
+            </div>
+
+            <div class="d-flex row">
+                <div class="col-sm-10 col-lg-3 gy-2 gx-3 align-items-center form-floating mb-3">
+                    <input type="date" class="form-control" id="date" name="date" value="<%= job.date %>">
+                    <label for="date">Date</label>
+                </div>
+                <div class="col-sm-10 col-lg-2 gy-2 gx-3 align-items-center form-floating mb-3">
+                    <input type="number" class="form-control" id="openings" name="openings" value="<%= job.openings %>">
+                    <label for="openings">No of Openings</label>
+                </div>
+                <div class="col-sm-10 col-lg-3 gy-2 gx-3 align-items-center form-floating mb-3">
+                    <div class="dropdown">
+                        <button class="btn btn-lg my-2 btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Select Skills
+                        </button>
+                        <ul class="dropdown-menu overflow-auto">
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input ms-1" type="checkbox" value="CSS" id="skill"
+                                        name="skill">
+                                    <label class="form-check-label ms-2" for="skill">
+                                        CSS
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input ms-1" type="checkbox" value="HTML" id="skill"
+                                        name="skill" checked>
+                                    <label class="form-check-label ms-2" for="skill">
+                                        HTML
+                                    </label>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Job</button>
+        </form>

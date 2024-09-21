@@ -1,0 +1,48 @@
+<div class="row border border-light bg-black text-light rounded justify-content-center">
+    <div class="col-10 my-3 text-center">
+        <h1>
+            <%= job.title %> in <%= job.location %> at <%= job.company %>
+        </h1>
+    </div>
+    <div class="col-10 mt-2 text-light">
+        <h4 class="lh-2">
+            <%= job.title %>
+                <% if(locals.userEmail){ %>
+                    <a href="/updateJob/<%= job.id %>"><button
+                            class="btn btn-outline-primary btn-sm">Update</button></a>
+                    <button class="btn btn-outline-danger btn-sm"
+                        onclick="deleteJobPost('<%= job.id %>')">Delete</button>
+                    <% } %>
+        </h4>
+        <p class="lh-1 fs-5">
+            <%= job.company %>
+        </p>
+        <div class="ms-1 mb-4">
+            <p class="lh-1 fs-6">
+                Location : <%= job.location %>
+            </p>
+            <p class="lh-1 fs-6">
+                Salary Upto <%= job.salary %>
+            </p>
+            <p class="lh-1 fs-6">
+                Last Date to apply : <%= job.date %>
+            </p>
+            <p class="lh-1 fs-6">
+                Number of Openings : <%= job.openings %>
+            </p>
+            <p class="lh-1 fs-6">
+                Applicants : <%= job.applicants %>
+            </p>
+            <p class="lh-1 fs-6">Skills Required :</p>
+            <ul class="d-flex flex-lg-row flex-md-column flex-sm-column"
+                style="list-style-type: none; flex-wrap: wrap;">
+                <% job.skill.forEach((skill)=> { %>
+                    <li class="text-white bg-dark bg-gradient border border-outline-primay rounded m-2 px-2">
+                        <%= skill %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <a href="/applyJob/<%= job.id %>"><button class="btn btn-primary">Apply Now</button></a>
+        </div>
+    </div>
+</div>
